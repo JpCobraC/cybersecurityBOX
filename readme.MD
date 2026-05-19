@@ -1,37 +1,51 @@
-# Laboratório Portátil de Cibersegurança com TV Box
+# CibersecurityBOX: Laboratório Portátil de Cibersegurança em Dispositivos ARM
 
-## Sobre o Projeto
+## Resumo Executivo
+O projeto **CibersecurityBOX** consiste no desenvolvimento de um laboratório portátil de cibersegurança de baixo custo, utilizando infraestrutura computacional reciclada baseada em TV Boxes. O objetivo principal é demonstrar a viabilidade do reaproveitamento desses dispositivos para a execução de ferramentas de segurança em nível de produção (monitoramento, detecção de intrusão e análise de tráfego), criando um ambiente de alta fidelidade para pesquisa, ensino e experimentação.
 
-A proposta consiste no desenvolvimento de um laboratório portátil de cibersegurança utilizando TV Box recicladas ou descaracterizadas como infraestrutura computacional de baixo custo. A ideia central é reaproveitar dispositivos normalmente subutilizados para executar ferramentas reais de monitoramento, detecção de intrusão e análise de tráfego de rede, criando um ambiente prático para ensino, pesquisa e experimentação em segurança da informação.
+## Motivação e Diferenciais
+O projeto endereça o alto custo de infraestrutura de laboratórios convencionais por meio de abordagens de *Green Computing* e *Edge Computing*. Seus principais diferenciais incluem:
+- **Sustentabilidade Tecnológica:** Redução de lixo eletrônico através da descaracterização e reaproveitamento de hardware ARM subutilizado.
+- **Portabilidade:** Laboratório compacto e transportável (plug-and-play), ideal para demonstrações, minicursos, oficinas e atividades extensionistas.
+- **Eficiência de Custo:** Alternativa economicamente viável para a democratização do ensino prático de segurança da informação em instituições de ensino.
+- **Pesquisa Quantitativa:** Base para análises de consumo energético, throughput de processamento de segurança e estabilidade operacional em hardware de borda (edge).
 
-## Arquitetura e Ferramentas
+## Arquitetura e Capacidades
+O cluster de TV Boxes é projetado para operar como uma rede de sensores distribuídos. Cada nó do cluster pode assumir funções modulares:
+- **Honeypots:** Simulação de serviços vulneráveis para atração e captura de táticas, técnicas e procedimentos (TTPs) de potenciais invasores (ex: **Cowrie**).
+- **IDS/IPS:** Detecção e prevenção de atividades suspeitas e anomalias de rede (ex: **Suricata**).
+- **Análise de Tráfego:** Inspeção profunda de pacotes (ex: **Wireshark / TShark**).
+- **Monitoramento e Telemetria:** Agregação de logs e dashboards de visualização em tempo real (ex: **Grafana**).
 
-Cada TV Box pode assumir uma função específica dentro do laboratório, como:
-- Execução de honeypots para captura de tentativas de invasão.
-- Sistemas IDS/IPS para detecção de atividades suspeitas na rede.
-- Servidores de monitoramento e coleta de logs.
-- Dashboards para visualização de eventos em tempo real.
+### Estudo de Caso e Conscientização: Rogue AP Educacional
+Aproveitando a flexibilidade de rede do hardware, o projeto engloba testes de segurança sem fio (Wireless Security). Utilizando as interfaces Wi-Fi nativas em modo monitor (ou com o uso de um dongle USB externo de baixo custo), a infraestrutura é capaz de hospedar scripts desenvolvidos em Python para a criação automatizada de Access Points falsos (Rogue APs). Estes interceptam as requisições DNS de celulares nas proximidades, direcionando os usuários para um "Captive Portal" com o intuito exclusivo de exibir alertas e orientações sobre os perigos da conexão em redes Wi-Fi públicas e abertas.
 
-Ferramentas como **Cowrie**, **Suricata**, **Grafana** e **Wireshark** podem ser utilizadas na composição da arquitetura experimental.
+---
 
-## Objetivos e Impacto
+## Roadmap de Implementação e Checklist
 
-O diferencial da proposta está na combinação entre **sustentabilidade tecnológica**, **baixo custo** e **aplicabilidade educacional**. Em vez de depender exclusivamente de servidores convencionais ou laboratórios caros, o projeto busca demonstrar que dispositivos ARM reciclados podem oferecer desempenho suficiente para atividades introdutórias e intermediárias em cibersegurança, especialmente em instituições com restrição orçamentária.
+Abaixo estão as etapas de execução do projeto, estruturadas cronologicamente desde a preparação do hardware até os testes finais:
 
-Além da aplicação didática, o projeto permite a realização de análises quantitativas sobre:
-- Consumo energético.
-- Desempenho computacional.
-- Estabilidade operacional.
-- Capacidade de processamento de eventos de segurança.
+### Fase 1: Preparação da Infraestrutura Física e Lógica
+- [x] Mapeamento e inventário das TV Boxes disponíveis (arquitetura do processador, RAM e armazenamento).
+- [x] Execução de testes de estresse de CPU, estabilidade e capacidade térmica (benchmark e monitoramento).
+- [x] Instalação e configuração do sistema operacional (Armbian / distros Linux baseadas em Debian/Ubuntu) nas TV Boxes.
+- [x] Configuração inicial de rede, definição de IPs estáticos e provisionamento de acesso remoto seguro (SSH).
 
-Dessa forma, a pesquisa pode contribuir tanto para a área de ensino de computação quanto para estudos relacionados a edge computing, computação verde e infraestrutura distribuída de segurança.
+### Fase 2: Implantação do Core de Segurança
+- [ ] Implantação de sistema de detecção de intrusão (Instalação e tunning do **Suricata**).
+- [ ] Configuração de ferramentas para sniffing e análise de pacotes (**Wireshark / tcpdump**).
+- [x] Configuração do sistema de **Honeypot** para simulação de falhas e monitoramento de ataques no nível de rede.
 
-## Portabilidade
+### Fase 3: Telemetria, Visualização e Segurança Sem Fio
+- [x] Setup da stack de telemetria e servidor de consolidação de logs.
+- [ ] Desenvolvimento de dashboards no **Grafana** para visualização centralizada dos eventos de segurança em tempo real.
+- [ ] Validação das interfaces Wi-Fi em Modo Monitor (testes com placa onboard vs. dongle USB).
+- [ ] Desenvolvimento do script em Python para criação automatizada do Rogue AP educacional e interceptação de DNS.
+- [ ] Criação do portal cativo (landing page HTML/CSS) focado em conscientização de segurança para o usuário final.
 
-Outro ponto relevante é a portabilidade da solução. O laboratório pode ser facilmente transportado e montado em diferentes ambientes, permitindo sua utilização em oficinas, minicursos, atividades extensionistas e demonstrações práticas. Isso amplia o potencial de democratização do acesso a ambientes experimentais de cibersegurança.
-
-A expectativa é avaliar até que ponto dispositivos de baixo custo podem atuar como sensores distribuídos de segurança, oferecendo uma alternativa viável para formação prática em redes e segurança da informação.
-
-## A Ideia: Ponto de Acesso Falso Educacional
-
-Se a sua TV Box tiver uma placa Wi-Fi compatível com modo monitor (ou se você espetar um dongle USB de R$ 20 que aceite), você pode programar um script em Python para criar um ponto de acesso falso automatizado que intercepta requisições DNS dos celulares ao redor, exibindo uma página de alerta educacional sobre os perigos de Wi-Fi público.
+### Fase 4: Validação, Pesquisa e Apresentação
+- [ ] Validação geral do laboratório através de simulações controladas de ataque (Red Teaming interno).
+- [ ] Coleta de dados de desempenho dos sensores sob carga (análise do trade-off entre hardware de baixo custo e volume de tráfego).
+- [ ] Documentação completa dos resultados obtidos.
+- [ ] Estruturação do modelo de minicurso/oficina para demonstração prática e replicação da arquitetura.
