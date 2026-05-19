@@ -1,4 +1,4 @@
-# CibersecurityBOX: Laboratório Portátil de Cibersegurança em Dispositivos ARM
+# CybersecurityBOX: Laboratório Portátil de Cibersegurança em Dispositivos ARM
 
 ## Resumo Executivo
 O projeto **CibersecurityBOX** consiste no desenvolvimento de um laboratório portátil de cibersegurança de baixo custo, utilizando infraestrutura computacional reciclada baseada em TV Boxes. O objetivo principal é demonstrar a viabilidade do reaproveitamento desses dispositivos para a execução de ferramentas de segurança em nível de produção (monitoramento, detecção de intrusão e análise de tráfego), criando um ambiente de alta fidelidade para pesquisa, ensino e experimentação.
