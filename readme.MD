@@ -30,12 +30,12 @@ Abaixo estão as etapas de execução do projeto, estruturadas cronologicamente 
 - [x] Mapeamento e inventário das TV Boxes disponíveis (arquitetura do processador, RAM e armazenamento).
 - [x] Execução de testes de estresse de CPU, estabilidade e capacidade térmica (benchmark e monitoramento).
 - [x] Instalação e configuração do sistema operacional (Armbian / distros Linux baseadas em Debian/Ubuntu) nas TV Boxes.
-- [x] Configuração inicial de rede, definição de IPs estáticos e provisionamento de acesso remoto seguro (SSH).
+- [x] Configuração inicial de rede e provisionamento de acesso remoto seguro (SSH) via **Tailscale**, permitindo acesso de qualquer lugar e tunelamento com instâncias da **Oracle Cloud** para contornar bloqueios de CGNAT.
 
 ### Fase 2: Implantação do Core de Segurança
 - [ ] Implantação de sistema de detecção de intrusão (Instalação e tunning do **Suricata**).
 - [ ] Configuração de ferramentas para sniffing e análise de pacotes (**Wireshark / tcpdump**).
-- [x] Configuração do sistema de **Honeypot** para simulação de falhas e monitoramento de ataques no nível de rede.
+- [x] Configuração do **Cowrie** como sistema de **Honeypot** para simulação de falhas (SSH/Telnet) e registro de ataques no nível de rede.
 
 ### Fase 3: Telemetria, Visualização e Segurança Sem Fio
 - [x] Setup da stack de telemetria e servidor de consolidação de logs.
