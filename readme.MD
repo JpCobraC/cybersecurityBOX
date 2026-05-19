@@ -42,7 +42,7 @@ Abaixo estão as etapas de execução do projeto, estruturadas cronologicamente 
 - [ ] Desenvolvimento de dashboards no **Grafana** para visualização centralizada dos eventos de segurança em tempo real.
 - [ ] Validação das interfaces Wi-Fi em Modo Monitor (testes com placa onboard vs. dongle USB).
 - [ ] Desenvolvimento do script em Python para criação automatizada do Rogue AP educacional e interceptação de DNS.
-- [ ] Criação do portal cativo (landing page HTML/CSS) focado em conscientização de segurança para o usuário final.
+- [X] Criação do portal cativo (landing page HTML/CSS) focado em conscientização de segurança para o usuário final.
 
 ### Fase 4: Validação, Pesquisa e Apresentação
 - [ ] Validação geral do laboratório através de simulações controladas de ataque (Red Teaming interno).
