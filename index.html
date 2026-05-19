@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Segurança - Wi-Fi Educativo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-top: 5px solid #da3633;
+            border-radius: 6px;
+            max-width: 550px;
+            width: 100%;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        .icon-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .warning-icon {
+            font-size: 50px;
+            color: #da3633;
+        }
+
+        h1 {
+            color: #f0f6fc;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .alert-box {
+            background-color: rgba(218, 54, 51, 0.1);
+            border: 1px solid rgba(218, 54, 51, 0.2);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+            color: #ff7b72;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #58a6ff;
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+
+        li {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li strong {
+            color: #f0f6fc;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .bullet {
+            color: #da3633;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="icon-box">
+        <span class="warning-icon">⚠</span>
+    </div>
+    
+    <h1>Acesso Interceptado!</h1>
+    
+    <div class="alert-box">
+        Este é um ambiente de testes controlado para conscientização em Cibersegurança.
+    </div>
+
+    <p>Você acabou de se conectar a uma rede Wi-Fi aberta sem senha. Se este ponto de acesso fosse controlado por um cibercriminoso real, seus dados estariam seriamente expostos neste exato momento.</p>
+
+    <h2>O que poderia acontecer aqui?</h2>
+    <ul>
+        <li>
+            <span class="bullet">↳</span>
+            <div>
+                <strong>Ataques Man-in-the-Middle (MitM)</strong>
+                Todo o tráfego gerado pelo seu dispositivo estaria passando diretamente pelo hardware do invasor, permitindo a análise de pacotes e requisições de rede.
+            </div>
+        </li>
+        <li>
+            <span class="bullet">↳</span>
+            <div>
+                <strong>Interceptação de DNS (Spoofing)</strong>
+                Como o roteador falso controla as respostas de nomes de domínio, o atacante pode criar réplicas exatas de páginas de login de bancos ou redes sociais para capturar suas credenciais.
+            </div>
+        </li>
+        <li>
+            <span class="bullet">↳</span>
+            <div>
+                <strong>Coleta de Metadados</strong>
+                Mesmo em conexões criptografadas (HTTPS), um atacante consegue monitorar quais servidores, aplicativos e serviços o seu dispositivo tenta contactar em background.
+            </div>
+        </li>
+    </ul>
+
+    <h2>Como se proteger no dia a dia?</h2>
+    <p>Evite realizar logins em contas importantes, compras ou transações bancárias quando estiver conectado a Wi-Fi públicos ou desconhecidos. Caso o uso seja estritamente necessário, utilize sempre uma camada de criptografia confiável, como uma VPN.</p>
+
+    <div class="footer">
+        Laboratório Educativo de Cibersegurança • Desenvolvido em Armbian
+    </div>
+</div>
+
+</body>
+</html>
