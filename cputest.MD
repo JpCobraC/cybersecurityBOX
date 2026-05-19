@@ -33,7 +33,7 @@ O script foi executado em quatro ambientes distintos (Arquiteturas x86 e ARM), g
 | Dispositivo / Processador | Sistema Operacional | Núcleos | Tempo (s) | Iterações Totais | Score Final |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **Intel Core i5-3470** | Ubuntu Server | 4 | **3.5679** | 60.000.000 | **16.816** |
-| **Intel Core i5-1145G7** | Windows 11 | 8 | 7.9872 | **120.000.000** | 15.024 |
+| **Intel Core i5-1145G7** | Ubunutu (WSL2 em Win11) | 8 | 5.7282 | **120.000.000** | **20.949** |
 | **Rockchip RK3318** | Armbian (Linux) | 4 | 37.9601 | 60.000.000 | 1.580 |
 | **Rockchip RK3229** | Armbian (Linux) | 4 | 44.1465 | 60.000.000 | 1.359 |
 
