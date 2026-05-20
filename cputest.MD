@@ -32,8 +32,9 @@ O script foi executado em quatro ambientes distintos (Arquiteturas x86 e ARM), g
 
 | Dispositivo / Processador | Sistema Operacional | Núcleos | Tempo (s) | Iterações Totais | Score Final |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Intel Core i5-1145G7** | Ubunutu (WSL2 em Win11) | 8 | 5.7282 | **120.000.000** | **20.949** |
-| **Intel Core i5-3470** | Ubuntu Server | 4 | **3.5679** | 60.000.000 | **16.816** |
+| **Intel Core Ultra 9 285H** | Windows 11 | 16 | 3.6046 | **240.000.000** | **66.581** |
+| **Intel Core i5-1145G7** | Ubuntu (WSL2 em Win11) | 8 | 5.7282 | 120.000.000 | 20.949 |
+| **Intel Core i5-3470** | Ubuntu Server | 4 | **3.5679** | 60.000.000 | 16.816 |
 | **Rockchip RK3318** | Armbian Headless | 4 | 37.9601 | 60.000.000 | 1.580 |
 | **Rockchip RK3229** | Armbian Headless | 4 | 44.1465 | 60.000.000 | 1.359 |
 
@@ -51,3 +52,6 @@ O chip **RK3318** superou o **RK3229** com uma vantagem de aproximadamente **16%
 O **i5-3470** (um processador antigo de 3ª geração) terminou sua carga na metade do tempo do **i5-1145G7** (11ª geração). Isso ocorreu por dois motivos:
 1. **Diferença de Escopo de Trabalho:** O i5-1145G7 identificou 8 núcleos virtuais (Hyper-Threading) e processou o **dobro** de volume de dados (120 milhões de iterações) comparado aos 4 núcleos do i5-3470 (60 milhões).
 2. **Sobrecarga (Overhead) do S.O.:** O i5-3470 rodou em um ambiente **Ubuntu Server limpo**, sem interface gráfica e com pouquíssimos processos em segundo plano. Já o i5-1145G7 rodou em ambiente Windows 11 com telemetria, antivírus e sincronização do OneDrive ativos, dividindo a atenção do processador.
+
+### 4. A Alta Performance de Nova Geração (Core Ultra 9 285H)
+O processador **Intel Core Ultra 9 285H** (arquitetura híbrida de nova geração com 16 núcleos lógicos sob Windows 11) atingiu o maior score registrado no teste, alcançando **66.581 pontos**. Ele processou um total massivo de **240.000.000 de iterações** em apenas **3.6046 segundos**, demonstrando a alta capacidade paralela e eficiência da nova arquitetura de CPUs móveis de alto desempenho.
