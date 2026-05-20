@@ -28,7 +28,7 @@ $$Score = \frac{\text{Iterações por Núcleo} \times \text{Total de Núcleos}}{
 
 ## 3. Resultados dos Testes de Campo
 
-O script foi executado em quatro ambientes distintos (Arquiteturas x86 e ARM), gerando os seguintes dados comparativos:
+O script foi executado em cinco ambientes distintos (Arquiteturas x86 e ARM), gerando os seguintes dados comparativos:
 
 | Dispositivo / Processador | Sistema Operacional | Núcleos | Tempo (s) | Iterações Totais | Score Final |
 | :--- | :--- | :---: | :---: | :---: | :---: |
