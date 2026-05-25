@@ -28,13 +28,14 @@ $$Score = \frac{\text{Iterações por Núcleo} \times \text{Total de Núcleos}}{
 
 ## 3. Resultados dos Testes de Campo
 
-O script foi executado em cinco ambientes distintos (Arquiteturas x86 e ARM), gerando os seguintes dados comparativos:
+O script foi executado em seis ambientes distintos (Arquiteturas x86 e ARM), gerando os seguintes dados comparativos:
 
 | Dispositivo / Processador | Sistema Operacional | Núcleos | Tempo (s) | Iterações Totais | Score Final |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Intel Core Ultra 9 285H** | Windows 11 | 16 | 3.6046 | **240.000.000** | **66.581** |
+| **Intel Core Ultra 9 285H** | Windows 11 | 16 | 3.6046 | 240.000.000 | 66.581 |
 | **Intel Core i5-1145G7** | Ubuntu (WSL2 em Win11) | 8 | 5.7282 | 120.000.000 | 20.949 |
-| **Intel Core i5-3470** | Ubuntu Server | 4 | **3.5679** | 60.000.000 | 16.816 |
+| **Intel Core i5-3470** | Ubuntu Server | 4 | 3.5679 | 60.000.000 | 16.816 |
+| **Amlogic S905X3** | Armbian (XFCE) | 4 | 15.0716 | 60.000.000 | 3.981 |
 | **Rockchip RK3318** | Armbian Headless | 4 | 37.9601 | 60.000.000 | 1.580 |
 | **Rockchip RK3229** | Armbian Headless | 4 | 44.1465 | 60.000.000 | 1.359 |
 
@@ -45,8 +46,8 @@ O script foi executado em cinco ambientes distintos (Arquiteturas x86 e ARM), ge
 ### 1. Desktops/Servidores vs. TV Boxes (x86 vs. ARM)
 A diferença entre os processadores de arquitetura x86 (Intel) e ARM (Rockchip) é brutal. O **i5-3470** foi cerca de **10 vezes mais rápido** que o **RK3318**. Isso reflete a proposta de cada hardware: chips de TV Box priorizam consumo mínimo de energia (frequentemente < 5W), enquanto chips de Desktop priorizam vazão de dados e performance bruta.
 
-### 2. O Embate das TV Boxes (RK3318 vs. RK3229)
-O chip **RK3318** superou o **RK3229** com uma vantagem de aproximadamente **16% em velocidade**. Embora ambos tenham 4 núcleos, o RK3318 utiliza núcleos mais modernos (Cortex-A53 de 64 bits), o que garante melhor desempenho para servidores caseiros (como Pi-hole ou Home Assistant).
+### 2. O Embate das TV Boxes (S905X3 vs. RK3318 vs. RK3229)
+O chip **Amlogic S905X3** superou os concorrentes da Rockchip com folga, alcançando **3.981 pontos** — mais de **2.5 vezes o score do RK3318** (1.580 pontos) —, mesmo rodando uma interface gráfica completa (**XFCE**), enquanto os outros rodavam em modo headless. Esse salto de performance se deve à arquitetura mais recente do S905X3, que utiliza núcleos **Cortex-A55** (mais eficientes por ciclo de clock e com frequências mais altas) em comparação com os núcleos Cortex-A53 do RK3318 e Cortex-A7 do RK3229.
 
 ### 3. O Impacto do Sistema Operacional (i5-3470 vs. i5-1145G7)
 O **i5-3470** (um processador antigo de 3ª geração) terminou sua carga na metade do tempo do **i5-1145G7** (11ª geração). Isso ocorreu por dois motivos:
